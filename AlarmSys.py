@@ -22,11 +22,11 @@ class AlarmSys:
         
         #frame pour les labels tikinte
         self.frame = Frame(self.__Root,bg="gray")
-        self.frame.grid(row=0, column=0, columnspan=2, rowspan=3, padx=10, pady=10)
+        self.frame.grid(row=0, column=0, columnspan=2, rowspan=3, padx=5, pady=5)
 
         #frame pour les bouton tikinter
         self.frame_button = Frame(self.__Root,bg="gray")
-        self.frame_button.grid(row=0, column=2, rowspan=3, padx=10, pady=10)
+        self.frame_button.grid(row=0, column=2, rowspan=3, padx=5, pady=5)
 
  
         # Tikinter label
