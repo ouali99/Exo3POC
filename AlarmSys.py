@@ -19,18 +19,27 @@ class AlarmSys:
         # Tikinter 
         self.__Root = Tk()
         self.__Root.title("Alarm System")
+        
+        #frame pour les labels tikinte
+        self.frame = Frame(self.__Root,bg="gray")
+        self.frame.grid(row=0, column=0, columnspan=2, rowspan=3, padx=10, pady=10)
+
+        #frame pour les bouton tikinter
+        self.frame_button = Frame(self.__Root,bg="gray")
+        self.frame_button.grid(row=0, column=2, rowspan=3, padx=10, pady=10)
+
  
         # Tikinter label
-        self.__lblz1 = Label(self.__Root, text=lblz1, bg="light blue")
-        self.__lblz2 = Label(self.__Root, text=lblz2, bg="light blue")
-        self.__lblz3 = Label(self.__Root, text=lblz3, bg="light blue")
-        self.__lblz4 = Label(self.__Root, text=lblz4, bg="light blue")
+        self.__lblz1 = Label(self.frame, text=lblz1, bg="light blue", width=4)
+        self.__lblz2 = Label(self.frame, text=lblz2, bg="light blue", width=4)
+        self.__lblz3 = Label(self.frame, text=lblz3, bg="light blue", width=4)
+        self.__lblz4 = Label(self.frame, text=lblz4, bg="light blue", width=4)
         self.__lbl_on_off = Label(self.__Root, text=lbl_on_off, bg="light blue")
  
         # Tikinter Button
-        self.__activate = btnK(self.__Root, text="Activate", command=self.__Activate, bg="orange")
-        self.__deactivate = btnK(self.__Root, text="Deactivate", command=self.__Deactivate, bg="orange")
-        self.__resetTk = btnK(self.__Root, text="Reset", command=self.__Reset, bg="orange")
+        self.__activate = btnK(self.frame_button, text="Activate", command=self.__Activate, bg="orange",width=10)
+        self.__deactivate = btnK(self.frame_button, text="Deactivate", command=self.__Deactivate, bg="orange",width=10)
+        self.__resetTk = btnK(self.frame_button, text="Reset", command=self.__Reset, bg="orange",width=10)
  
         # LED
         self.__alarme = LED(alarme)
@@ -66,9 +75,9 @@ class AlarmSys:
         self.__lblz3.grid(row=1, column=0)
         self.__lblz4.grid(row=1, column=1)
         self.__lbl_on_off.grid(row=2, column=0, columnspan=2, padx=10, pady=10)
-        self.__activate.grid(row=0, column=2, padx=10, pady=10)
+        self.__activate.grid(row=0, column=2, padx=10, pady=5)
         self.__deactivate.grid(row=1, column=2, padx=10, pady=10)
-        self.__resetTk.grid(row=2, column=2, padx=10, pady=10)
+        self.__resetTk.grid(row=2, column=2, padx=10, pady=5)
  
         # demmarage de la fenetre tikinter
         self.__Root.mainloop()
